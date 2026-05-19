@@ -1,0 +1,74 @@
+# ==========================================
+# GITIGNORE UNTUK BACKUP/DEPLOYMENT CPANEL
+# ==========================================
+
+# --- SECURITY RISK (SANGAT PENTING: JANGAN DI-PUSH) ---
+# Folder sistem cPanel yang berisi kunci SSL, konfigurasi server, dan email pribadi
+/ssl/
+/mail/
+/etc/
+/access-logs/
+/logs/
+/tmp/
+/wordpress-backups/
+error_log
+**/error_log
+
+# File konfigurasi yang menyimpan password database & API key
+.env
+app/.env
+**/wp-config.php
+
+# --- CADANGAN & FILE SEMENTARA ---
+# Folder backup WordPress lama atau duplikat
+/public_htmlx/
+
+# Folder data Moodle (berisi file upload, cache, sesi yang selalu berubah)
+/moodledata/
+
+# macOS Metadata yang tidak berguna (ada puluhan ribu file)
+**/__MACOSX/
+**/.DS_Store
+Thumbs.db
+
+# --- FILE BESAR & BACKUP DATABASE ---
+# File zip updater dan backup database SQL (sangat membebani Git)
+*.zip
+*.rar
+*.tgz
+*.gz
+*.sql
+app/*.zip
+app/*.sql
+
+# --- DEPENDENSI / PACKAGES (SEBAIKNYA JANGAN DI-TRACK) ---
+# Composer dependencies (bisa diinstall via 'composer install' di cPanel jika SSH aktif)
+app/vendor/
+public_html/vendor/
+**/node_modules/
+
+# --- CACHE & STORAGE TERINTEGRASI ---
+# Cache Laravel & session storage
+app/storage/framework/cache/data/*
+app/storage/framework/sessions/*
+app/storage/framework/views/*
+app/storage/logs/*
+!app/storage/framework/cache/data/.gitignore
+!app/storage/framework/sessions/.gitignore
+!app/storage/framework/views/.gitignore
+!app/storage/logs/.gitignore
+
+# --- PENAMBAHAN ATURAN OPTIMALISASI REPOSITORY ---
+# Abaikan folder www secara keseluruhan (karena di cPanel merupakan symlink ke public_html)
+/www/
+
+# Abaikan isi dari public_html/storage (sisakan folder kosong melalui .gitignore jika perlu)
+/public_html/storage/*
+!/public_html/storage/.gitignore
+
+# Abaikan core WordPress wicarita.online (sisakan custom themes, plugins, & config)
+/public_html/wicarita.online/wp-admin/
+/public_html/wicarita.online/wp-includes/
+/public_html/wicarita.online/wp-content/cache/
+/public_html/wicarita.online/wp-content/uploads/
+

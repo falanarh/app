@@ -1,0 +1,10 @@
+{
+    "id": "archielite/katen",
+    "name": "Katen",
+    "namespace": "Theme\\Katen\\",
+    "author": "Archi Elite",
+    "url": "https://archielite.com",
+    "version": "1.0.0",
+    "description": "Katen - Minimal Blog & Magazine",
+    "required_plugins": []
+}

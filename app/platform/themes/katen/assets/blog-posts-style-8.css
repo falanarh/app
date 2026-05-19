@@ -1,0 +1,189 @@
+/* Blog Posts Style 8 - Enhanced Styles */
+.blog-posts-style-8 {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --border-color: #dee2e6;
+    --hover-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+.blog-posts-style-8 .post-style-8 {
+    transition: var(--transition);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blog-posts-style-8 .post-style-8:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.blog-posts-style-8 .post-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.blog-posts-style-8 .post-image img {
+    transition: transform 0.5s ease;
+}
+
+.blog-posts-style-8 .post-image:hover img {
+    transform: scale(1.05);
+}
+
+.blog-posts-style-8 .post-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,123,255,0.8), rgba(108,117,125,0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    backdrop-filter: blur(2px);
+}
+
+.blog-posts-style-8 .post-image:hover .post-overlay {
+    opacity: 1;
+}
+
+.blog-posts-style-8 .post-title a {
+    color: inherit;
+    transition: var(--transition);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.blog-posts-style-8 .post-title a:hover {
+    color: var(--primary-color);
+}
+
+.blog-posts-style-8 .post-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.blog-posts-style-8 .view-controls .btn {
+    border-radius: 0;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.blog-posts-style-8 .view-controls .btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.blog-posts-style-8 .pagination .page-link {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.blog-posts-style-8 .pagination .page-link:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.blog-posts-style-8 .pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.blog-posts-style-8 .posts-container.list-layout .post-item {
+    margin-bottom: 2rem;
+}
+
+.blog-posts-style-8 .posts-container.list-layout .card {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.blog-posts-style-8 .posts-container.list-layout .post-image {
+    flex: 0 0 300px;
+    border-radius: 12px 0 0 12px;
+}
+
+.blog-posts-style-8 .posts-container.list-layout .card-body {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* Loading Animation */
+.blog-posts-style-8 .posts-container.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.blog-posts-style-8 .loading-spinner {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.blog-posts-style-8.loading .loading-spinner {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .blog-posts-style-8 .posts-container.list-layout .card {
+        flex-direction: column;
+    }
+    
+    .blog-posts-style-8 .posts-container.list-layout .post-image {
+        flex: none;
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-posts-style-8 .blog-navigation-controls {
+        text-align: center;
+    }
+    
+    .blog-posts-style-8 .view-controls {
+        justify-content: center !important;
+        margin-top: 1rem;
+    }
+    
+    .blog-posts-style-8 .pagination .page-link {
+        width: 40px;
+        height: 40px;
+        margin: 0 2px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .blog-posts-style-8 {
+        --border-color: #495057;
+        --secondary-color: #adb5bd;
+    }
+    
+    .blog-posts-style-8 .card {
+        background-color: #2d3748;
+        border-color: var(--border-color);
+    }
+    
+    .blog-posts-style-8 .text-muted {
+        color: var(--secondary-color) !important;
+    }
+}
